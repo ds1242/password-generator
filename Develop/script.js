@@ -14,7 +14,7 @@ function passwordLength(){
       if(passLength === "" || isNaN(passLength) || passLength < 8 || passLength > 128){
         alert("Please enter a valid number.");
       } else {
-        // valid entry
+        // return the valid entry
         return passLength;
       }
     }
@@ -29,7 +29,7 @@ function passwordLength(){
 // then generate password and display in either the box or as an alert
 function generatePassword(){
   var passLength = passwordLength();
-  console.log(passLength);
+  console.log("password length is " + passLength);
   return passwordLength;
 }
 // Get references to the #generate element
