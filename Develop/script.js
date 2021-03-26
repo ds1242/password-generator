@@ -1,5 +1,16 @@
 // Assignment code here
 
+// prompted with password criteria
+
+// set length of password (between 8 and 128 characters)
+
+// prompt for special character types
+
+// user selects lowercase, uppercase, numeric, and/or special characters
+
+// validate input from user and at least one of each selected type should be included
+
+// then generate password and display in either the box or as an alert
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
