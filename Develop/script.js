@@ -1,6 +1,95 @@
 // Assignment code here
+function poolCheck(caseType){
+  var symbolCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var lowerCharacters = "abcdefghijklmnopqrstuvwyxz";
+  var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVQYXZ";
+  var numericCharacters = "0123456789";
+  var characterPool = '';
 
-// prompted with password criteria
+  // check each possible combo to determine the pool of possible characters to pull into the random password
+  // there has to be a better way to do this
+  if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === false){
+    
+    characterPool = lowerCharacters;
+    return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === false){
+      
+      characterPool = lowerCharacters.concat(upperCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === false){
+      characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === true){
+      
+      characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters, numericCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === false){
+    
+      characterPool = upperCharacters;
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === false){
+    
+      characterPool = upperCharacters.concat(symbolCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === true){
+    
+      characterPool = upperCharacters.concat(symbolCharacters, numericCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === false){
+    
+      characterPool = symbolCharacters;
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === true){
+    
+      characterPool = symbolCharacters.concat(numericCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === true){
+    
+      characterPool = symbolCharacters.concat(numericCharacters, lowerCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === true){
+    
+      characterPool = numericCharacters;
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === true){
+    
+      characterPool = lowerCharacters.concat(numericCharacters);
+      return characterPool;
+
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === true){
+    
+      characterPool = lowerCharacters.concat(upperCharacters, numericCharacters);
+      return characterPool;
+  } 
+    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === false){
+    
+      characterPool = lowerCharacters.concat(symbolCharacters);
+      return characterPool;
+  } 
+};
 
 // set length of password (between 8 and 128 characters)
 function passwordLength(){
@@ -22,8 +111,7 @@ function passwordLength(){
     }
   }
 }
-// prompt for special character types
- 
+// prompt for special character types 
 // user selects lowercase, uppercase, numeric, and/or special characters
 function caseCheck(){
   var lowerCase = confirm("Would you like lower case characters? Click OK for Yes or CANCEL for No");
@@ -31,6 +119,7 @@ function caseCheck(){
   var numberCase = confirm("Would you like numbers? Click OK for Yes or CANCEL for No");
   var specialCase = confirm("Would you like special characters? Click OK for Yes or CANCEL for No");
   // have to check if all false return message else return values
+  // validate input from user and at least one of each selected type should be included
   if(lowerCase === false && upperCase === false && numberCase === false && specialCase === false){
     window.alert("Please select at least one of the options")
     return caseCheck();
@@ -44,26 +133,21 @@ function caseCheck(){
   }
 
 }
-// validate input from user and at least one of each selected type should be included
+
 
 // then generate password and display in either the box or as an alert
 function generatePassword(passLength, caseType){
   var password = '';
+  var characterPool = poolCheck(caseType);
 
-  
-  
-  
-  
-  
-  console.log("password length is " + passLength);  
-  console.log(caseType);
-  console.log(caseType.lowerCase);
-  console.log(caseType.upperCase);
-  console.log(caseType.numberCase);
-  console.log(caseType.specialCase);
-  
-  
-  return passLength;
+  // need to determine value of caseTypes then do loops based on that
+  // sets password here
+  for(var i = 0; i < passLength; i++){
+    password += characterPool.charAt(Math.floor(Math.random() * characterPool.length));
+    console.log(Math.floor(Math.random() * characterPool.length));
+  }
+  // return the password
+  return password;  
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
