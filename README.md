@@ -58,7 +58,7 @@ https://ds1242.github.io/password-generator/
 <img width= "700" src="./assets/images/specialCaseCheck.jpg" alt="message asking for symbol characters to be included">
 
 #### Alert if no character type is selected
-<img width= "700" src="./assets/images/caseCheckValidation.jpg" alt="message stating at least one character type must be selected">
+<img src="./assets/images/caseCheckValidation.jpg" alt="message stating at least one character type must be selected">
 
 #### Password has been generated
 <img src="./assets/images/passwordGenerated.jpg" alt="password generated in box based on criteria selected">
