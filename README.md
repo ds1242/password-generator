@@ -27,9 +27,9 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
 ## Built With
-HTML
-CSS
-JavaScript
+* HTML
+* CSS
+* JavaScript
 
 ## Website
 
@@ -37,31 +37,31 @@ https://ds1242.github.io/password-generator/
 
 ## Screenshots
 #### The page when opened:
-<img width="700" src="./assets/PasswordGenBlank.jpg" alt="page is blank when opened">
+<img width= "700" src="./assets/images/PasswordGenBlank.jpg" alt="page is blank when opened">
 
 #### Asks for length of password:
-<img width="700" src="./assets/PasswordLengthPrompt.jpg" alt="how long the password must be">
+<img width= "700" src="./assets/images/PasswordLengthPrompt.jpg" alt="how long the password must be">
 
 #### Prompt if a letter or number <8 or > 128 is entered
-<img width="700" src="./assets/ValidLengthCheck.jpg" alt="message alerting an invalid value has been entered">
+<img width= "700" src="./assets/images/ValidLengthCheck.jpg" alt="message alerting an invalid value has been entered">
 
 #### Prompt for lower case values to be included in password
-<img width="700" src="./assets/lowerCaseCheck.jpg" alt="message asking for lower case characters to be included">
+<img width= "700" src="./assets/images/lowerCaseCheck.jpg" alt="message asking for lower case characters to be included">
 
 #### Prompt for upper case values to be included in password
-<img width="700" src="./assets/upperCaseCheck.jpg" alt="message asking for upper case characters to be included">
+<img width= "700" src="./assets/images/upperCaseCheck.jpg" alt="message asking for upper case characters to be included">
 
 #### Prompt for numbers to be included in password
-<img width="700" src="./assets/numberCaseCheck.jpg" alt="message asking for numbers to be included">
+<img width= "700" src="./assets/images/numberCaseCheck.jpg" alt="message asking for numbers to be included">
 
 #### Prompt for special characters to be included in password
-<img width="700" src="./assets/specialCaseCheck.jpg" alt="message asking for symbol characters to be included">
+<img width= "700" src="./assets/images/specialCaseCheck.jpg" alt="message asking for symbol characters to be included">
 
 #### Alert if no character type is selected
-<img width="700" src="./assets/caseCheckValidation.jpg" alt="message stating at least one character type must be selected">
+<img width= "700" src="./assets/images/caseCheckValidation.jpg" alt="message stating at least one character type must be selected">
 
 #### Password has been generated
-<img width="700" src="./assets/passwordGenerated.jpg" alt="password generated in box based on criteria selected">
+<img width= "700" src="./assets/images/passwordGenerated.jpg" alt="password generated in box based on criteria selected">
 
 ## Contributions
 Starter Code from Code Bootcamp
