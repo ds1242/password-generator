@@ -1,6 +1,5 @@
 // Assignment code here
 function poolCheck(caseType){
-  
   var symbolCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var lowerCharacters = "abcdefghijklmnopqrstuvwyxz";
   var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVQYXZ";
@@ -15,10 +14,7 @@ function poolCheck(caseType){
     caseType.numberCase === false) 
     {
     
-    characterPool = {
-      lowerCharacters
-    };
-
+    characterPool = lowerCharacters;
     return characterPool;
 
   } 
@@ -28,10 +24,7 @@ function poolCheck(caseType){
       caseType.numberCase === false) 
       {
       
-        characterPool = {
-          lowerCharacters,
-          upperCharacters
-        }
+        characterPool = lowerCharacters.concat(upperCharacters);
         return characterPool;
 
   } 
@@ -41,12 +34,7 @@ function poolCheck(caseType){
       caseType.numberCase === false) 
       {
 
-        characterPool = {
-          lowerCharacters, 
-          upperCharacters,
-          symbolCharacters
-        };
-
+        characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters);
         return characterPool;
 
   } 
@@ -56,12 +44,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
       
-        characterPool = {
-          lowerCharacters,
-          upperCharacters,
-          symbolCharacters,
-          numericCharacters
-        };
+        characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters, numericCharacters);
         return characterPool;
 
   } 
@@ -71,10 +54,7 @@ function poolCheck(caseType){
       caseType.numberCase === false) 
       {
     
-        characterPool = {
-          upperCharacters
-        };
-
+        characterPool = upperCharacters;
         return characterPool;
 
   } 
@@ -84,11 +64,7 @@ function poolCheck(caseType){
       caseType.numberCase === false) 
       {
     
-        characterPool = {
-          upperCharacters, 
-          symbolCharacters
-         };
-
+        characterPool = upperCharacters.concat(symbolCharacters);
         return characterPool;
 
   } 
@@ -98,12 +74,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          upperCharacters,
-          symbolCharacters, 
-          numericCharacters
-        };
-
+        characterPool = upperCharacters.concat(symbolCharacters, numericCharacters);
         return characterPool;
 
   } 
@@ -113,10 +84,7 @@ function poolCheck(caseType){
       caseType.numberCase === false) 
       {
     
-        characterPool = 
-        {symbolCharacters
-        };
-
+        characterPool = symbolCharacters;
         return characterPool;
 
   } 
@@ -126,11 +94,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          symbolCharacters,
-          numericCharacters
-        };
-
+        characterPool = symbolCharacters.concat(numericCharacters);
         return characterPool;
 
   } 
@@ -140,12 +104,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          symbolCharacters,
-          numericCharacters, 
-          lowerCharacters
-        };
-        
+        characterPool = symbolCharacters.concat(numericCharacters, lowerCharacters);
         return characterPool;
 
   } 
@@ -155,10 +114,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          numericCharacters
-        };
-
+        characterPool = numericCharacters;
         return characterPool;
 
   } 
@@ -168,11 +124,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          lowerCharacters,
-          numericCharacters
-        };
-
+        characterPool = lowerCharacters.concat(numericCharacters);
         return characterPool;
 
   } 
@@ -182,12 +134,7 @@ function poolCheck(caseType){
       caseType.numberCase === true) 
       {
     
-        characterPool = {
-          lowerCharacters,
-          upperCharacters, 
-          numericCharacters
-        };
-
+        characterPool = lowerCharacters.concat(upperCharacters, numericCharacters);
         return characterPool;
   } 
     else if(caseType.lowerCase === true && 
@@ -196,11 +143,7 @@ function poolCheck(caseType){
       caseType.numberCase === false)
       {
     
-        characterPool = {
-          lowerCharacters,
-          symbolCharacters
-        };
-
+        characterPool = lowerCharacters.concat(symbolCharacters);
         return characterPool;
   } 
     else if(caseType.lowerCase === false && 
@@ -209,11 +152,7 @@ function poolCheck(caseType){
       caseType.numberCase === true)
       {
 
-        characterPool = {
-          upperCharacters,
-          numericCharacters
-        };
-
+        characterPool = upperCharacters.concat(numericCharacters);
         return characterPool;
 
     }
@@ -272,8 +211,7 @@ function generatePassword(passLength, caseType){
   // need to determine value of caseTypes then do loops based on that
   // sets password here
   for(var i = 0; i < passLength; i++){
-    password += getRandomCharFromString(Object.values(characterPool).join(''));
-    // password += characterPool.charAt(Math.floor(Math.random() * characterPool.length));
+    password += characterPool.charAt(Math.floor(Math.random() * characterPool.length));
   }
 
   return password
