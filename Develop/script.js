@@ -89,6 +89,12 @@ function poolCheck(caseType){
       characterPool = lowerCharacters.concat(symbolCharacters);
       return characterPool;
   } 
+    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === true){
+
+      characterPool = upperCharacters.concat(numericCharacters);
+      return characterPool;
+
+    }
 };
 
 // set length of password (between 8 and 128 characters)
@@ -144,7 +150,6 @@ function generatePassword(passLength, caseType){
   // sets password here
   for(var i = 0; i < passLength; i++){
     password += characterPool.charAt(Math.floor(Math.random() * characterPool.length));
-    console.log(Math.floor(Math.random() * characterPool.length));
   }
   // return the password
   return password;  
