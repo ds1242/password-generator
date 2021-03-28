@@ -61,7 +61,7 @@ https://ds1242.github.io/password-generator/
 <img width= "700" src="./assets/images/caseCheckValidation.jpg" alt="message stating at least one character type must be selected">
 
 #### Password has been generated
-<img width= "700" src="./assets/images/passwordGenerated.jpg" alt="password generated in box based on criteria selected">
+<img src="./assets/images/passwordGenerated.jpg" alt="password generated in box based on criteria selected">
 
 ## Contributions
 Starter Code from Code Bootcamp
