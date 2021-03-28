@@ -1,6 +1,6 @@
 // Assignment code here
 function poolCheck(caseType){
-  var symbolCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var symbolCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var lowerCharacters = "abcdefghijklmnopqrstuvwyxz";
   var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVQYXZ";
   var numericCharacters = "0123456789";
@@ -8,94 +8,156 @@ function poolCheck(caseType){
 
   // check each possible combo to determine the pool of possible characters to pull into the random password
   // there has to be a better way to do this
-  if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === false){
+  if(caseType.lowerCase === true && 
+    caseType.upperCase === false && 
+    caseType.specialCase === false && 
+    caseType.numberCase === false) 
+    {
     
     characterPool = lowerCharacters;
     return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === false){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === true && 
+      caseType.specialCase === false && 
+      caseType.numberCase === false) 
+      {
       
-      characterPool = lowerCharacters.concat(upperCharacters);
-      return characterPool;
+        characterPool = lowerCharacters.concat(upperCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === false){
-      characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters);
-      return characterPool;
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === true && 
+      caseType.specialCase === true && 
+      caseType.numberCase === false) 
+      {
+
+        characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === true){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === true && 
+      caseType.specialCase === true && 
+      caseType.numberCase === true) 
+      {
       
-      characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters, numericCharacters);
-      return characterPool;
+        characterPool = lowerCharacters.concat(upperCharacters,symbolCharacters, numericCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === false){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === true && 
+      caseType.specialCase === false && 
+      caseType.numberCase === false) 
+      {
     
-      characterPool = upperCharacters;
-      return characterPool;
+        characterPool = upperCharacters;
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === false){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === true && 
+      caseType.specialCase === true && 
+      caseType.numberCase === false) 
+      {
     
-      characterPool = upperCharacters.concat(symbolCharacters);
-      return characterPool;
+        characterPool = upperCharacters.concat(symbolCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === true && caseType.numberCase === true){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === true && 
+      caseType.specialCase === true && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = upperCharacters.concat(symbolCharacters, numericCharacters);
-      return characterPool;
+        characterPool = upperCharacters.concat(symbolCharacters, numericCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === false){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === false && 
+      caseType.specialCase === true && 
+      caseType.numberCase === false) 
+      {
     
-      characterPool = symbolCharacters;
-      return characterPool;
+        characterPool = symbolCharacters;
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === true){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === false && 
+      caseType.specialCase === true && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = symbolCharacters.concat(numericCharacters);
-      return characterPool;
+        characterPool = symbolCharacters.concat(numericCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === true){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === false && 
+      caseType.specialCase === true && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = symbolCharacters.concat(numericCharacters, lowerCharacters);
-      return characterPool;
+        characterPool = symbolCharacters.concat(numericCharacters, lowerCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === true){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === false && 
+      caseType.specialCase === false && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = numericCharacters;
-      return characterPool;
+        characterPool = numericCharacters;
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === false && caseType.numberCase === true){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === false && 
+      caseType.specialCase === false && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = lowerCharacters.concat(numericCharacters);
-      return characterPool;
+        characterPool = lowerCharacters.concat(numericCharacters);
+        return characterPool;
 
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === true){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === true && 
+      caseType.specialCase === false && 
+      caseType.numberCase === true) 
+      {
     
-      characterPool = lowerCharacters.concat(upperCharacters, numericCharacters);
-      return characterPool;
+        characterPool = lowerCharacters.concat(upperCharacters, numericCharacters);
+        return characterPool;
   } 
-    else if(caseType.lowerCase === true && caseType.upperCase === false && caseType.specialCase === true && caseType.numberCase === false){
+    else if(caseType.lowerCase === true && 
+      caseType.upperCase === false && 
+      caseType.specialCase === true && 
+      caseType.numberCase === false)
+      {
     
-      characterPool = lowerCharacters.concat(symbolCharacters);
-      return characterPool;
+        characterPool = lowerCharacters.concat(symbolCharacters);
+        return characterPool;
   } 
-    else if(caseType.lowerCase === false && caseType.upperCase === true && caseType.specialCase === false && caseType.numberCase === true){
+    else if(caseType.lowerCase === false && 
+      caseType.upperCase === true && 
+      caseType.specialCase === false && 
+      caseType.numberCase === true)
+      {
 
-      characterPool = upperCharacters.concat(numericCharacters);
-      return characterPool;
+        characterPool = upperCharacters.concat(numericCharacters);
+        return characterPool;
 
     }
 };
+
 
 // set length of password (between 8 and 128 characters)
 function passwordLength(){
@@ -116,7 +178,7 @@ function passwordLength(){
       }
     }
   }
-}
+};
 // prompt for special character types 
 // user selects lowercase, uppercase, numeric, and/or special characters
 function caseCheck(){
